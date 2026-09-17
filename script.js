@@ -6,16 +6,16 @@
 (function () {
   'use strict';
 
-  /* ===== פרטי הסטודיו — ערכו כאן =========================================
-     whatsapp / email: החליפו לערכים האמיתיים לפני שמפרסמים.
-     leadsApi: ריק => אין שרת טופס (אתר סטטי). במצב כזה הטופס נופל אוטומטית
-     לקישור וואטסאפ/מייל כדי שהפנייה לא תלך לאיבוד.                    */
+  /* ===== פרטי הסטודיו — נוצרו ע"י tools/build-deploy-kit.py =============
+     email: דוא"ל הפניות שמוצג באתר ובטופס. formsApi: שירות טפסים חינמי
+     (FormSubmit) שמעביר כל פנייה למייל הזה. אין צורך בשרת.               */
   var STUDIO = {
-    whatsapp: '972500000000',
-    email: 'hello@example.co.il',
+    whatsapp: '',
+    email: '',
+    formsApi: 'https://thrown-auction-limitations-hurricane.trycloudflare.com/api/leads',
     leadsApi: (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
       ? 'http://127.0.0.1:8134/api/leads'
-      : ''
+      : 'https://thrown-auction-limitations-hurricane.trycloudflare.com/api/leads'
   };
   var LEADS_API = STUDIO.leadsApi;
 
@@ -26,7 +26,10 @@
     if (payload.email) lines.push('דוא״ל: ' + payload.email);
     if (payload.budget) lines.push('תקציב: ' + payload.budget);
     if (payload.message) lines.push('פרטים: ' + payload.message);
-    return 'https://wa.me/' + STUDIO.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+    if (STUDIO.whatsapp) {
+      return 'https://wa.me/' + STUDIO.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+    }
+    return 'mailto:' + STUDIO.email + '?body=' + encodeURIComponent(lines.join('\n'));
   }
 
   /* ---- Current year ---- */
@@ -201,10 +204,14 @@
       }).catch(function (err) {
         if (status) {
           status.className = 'form-status bad';
-          status.innerHTML = 'לא הצלחנו לשלוח אוטומטית. '
-            + '<a href="' + fallbackHref(payload) + '" target="_blank" rel="noopener">'
-            + 'שלחו לנו בוואטסאפ</a> או כתבו ל-'
-            + '<a href="mailto:' + STUDIO.email + '">' + STUDIO.email + '</a>.';
+          var alt = '';
+          if (STUDIO.whatsapp) {
+            alt = ' אפשר <a href="' + fallbackHref(payload) + '" target="_blank" rel="noopener">'
+              + 'לשלוח בוואטסאפ</a>.';
+          } else if (STUDIO.email) {
+            alt = ' אפשר לכתוב ל-<a href="mailto:' + STUDIO.email + '">' + STUDIO.email + '</a>.';
+          }
+          status.innerHTML = 'לא הצלחנו לשלוח כרגע — נסו שוב בעוד רגע.' + alt;
         }
       }).then(done);
   });
