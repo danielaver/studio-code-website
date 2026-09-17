@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' http://127.0.0.1:8134;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta name="description" content="סטודיו קוד — בונים אתרים ואפליקציות ווב מהירים, נגישים ומדויקים. עיצוב, פיתוח, השקה ותחזוקה במקום אחד.">
+  <title>סטודיו קוד — בונים אתרים שעובדים</title>
+
+  <!-- ===== SEO: קנוני, סריקה ושיתוף =====
+       __SITE_URL__ / __SITE_IMAGE__ מוחלפים בכתובת האמיתית בזמן ההגשה
+       (tools/dashboard-server.py · _inject_seo). להגדרת דומיין: MARKETING_SITE_URL -->
+  <link rel="canonical" href="__SITE_URL__">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="סטודיו קוד">
+  <meta name="theme-color" content="#6d5efc" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
+  <link rel="alternate" hreflang="he-IL" href="__SITE_URL__">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="סטודיו קוד">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:url" content="__SITE_URL__">
+  <meta property="og:title" content="סטודיו קוד — בונים אתרים שעובדים">
+  <meta property="og:description" content="עיצוב, קוד, ביצועים, נגישות ותחזוקה במקום אחד — אתרים וחנויות ואפליקציות ווב בעברית RTL, מהרעיון ועד ההשקה.">
+  <meta property="og:image" content="__SITE_IMAGE__">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="סטודיו קוד — בניית אתרים ואפליקציות ווב בעברית">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="סטודיו קוד — בונים אתרים שעובדים">
+  <meta name="twitter:description" content="אתרים, חנויות ואפליקציות ווב בעברית RTL: עיצוב, קוד, ביצועים ונגישות — מהרעיון ועד ההשקה.">
+  <meta name="twitter:image" content="__SITE_IMAGE__">
+  <meta name="twitter:image:alt" content="סטודיו קוד — בניית אתרים ואפליקציות ווב בעברית">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "__SITE_URL__#studio",
+        "name": "סטודיו קוד",
+        "alternateName": "Studio Code",
+        "description": "סטודיו לבניית אתרים ואפליקציות ווב בעברית: עיצוב, פיתוח, ביצועים, נגישות WCAG, קידום אורגני ותחזוקה — במקום אחד.",
+        "url": "__SITE_URL__",
+        "image": "__SITE_IMAGE__",
+        "email": "hello@example.co.il",
+        "telephone": "+972-50-000-0000",
+        "priceRange": "₪1,450–₪15,000",
+        "currenciesAccepted": "ILS",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        },
+        "areaServed": {"@type": "Country", "name": "ישראל"},
+        "knowsLanguage": ["he", "en"],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "מסלול נוכחות — דף נחיתה או אתר תדמית קטן",
+            "price": "2900",
+            "priceCurrency": "ILS",
+            "url": "__SITE_URL__#pricing",
+            "itemOffered": {"@type": "Service", "name": "בניית אתר תדמית בעברית RTL"}
+          },
+          {
+            "@type": "Offer",
+            "name": "מסלול עסקי — אתר עסקי מלא או חנות אונליין",
+            "price": "7900",
+            "priceCurrency": "ILS",
+            "url": "__SITE_URL__#pricing",
+            "itemOffered": {"@type": "Service", "name": "בניית אתר עסקי וחנות אונליין"}
+          },
+          {
+            "@type": "Offer",
+            "name": "מסלול אפליקציה — ווב אפ ואינטגרציות",
+            "price": "15000",
+            "priceCurrency": "ILS",
+            "url": "__SITE_URL__#pricing",
+            "itemOffered": {"@type": "Service", "name": "פיתוח אפליקציית ווב ואינטגרציות API"}
+          },
+          {
+            "@type": "Offer",
+            "name": "ריטיינר שיווק — נוכחות",
+            "price": "1450",
+            "priceCurrency": "ILS",
+            "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
+            "url": "__SITE_URL__#marketing",
+            "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1450", "priceCurrency": "ILS", "unitCode": "MON"}
+          },
+          {
+            "@type": "Offer",
+            "name": "ריטיינר שיווק — צמיחה",
+            "price": "2900",
+            "priceCurrency": "ILS",
+            "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
+            "url": "__SITE_URL__#marketing",
+            "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2900", "priceCurrency": "ILS", "unitCode": "MON"}
+          },
+          {
+            "@type": "Offer",
+            "name": "ריטיינר שיווק — מנוע צמיחה",
+            "price": "5400",
+            "priceCurrency": "ILS",
+            "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
+            "url": "__SITE_URL__#marketing",
+            "priceSpecification": {"@type": "UnitPriceSpecification", "price": "5400", "priceCurrency": "ILS", "unitCode": "MON"}
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "__SITE_URL__#website",
+        "url": "__SITE_URL__",
+        "name": "סטודיו קוד",
+        "inLanguage": "he-IL",
+        "publisher": {"@id": "__SITE_URL__#studio"}
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "__SITE_URL__#faq",
+        "inLanguage": "he-IL",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "כמה זמן לוקח פרויקט?",
+            "acceptedAnswer": {"@type": "Answer", "text": "אתר תדמית קטן: כ־1–2 שבועות. אתר עסקי או חנות: 3–6 שבועות. אפליקציה: לפי אפיון. תמיד עם לוח זמנים חתום לפני שמתחילים."}
+          },
+          {
+            "@type": "Question",
+            "name": "האתר יהיה בעברית ובכיוון RTL?",
+            "acceptedAnswer": {"@type": "Answer", "text": "כן, כברירת מחדל. אנחנו בונים RTL מההתחלה — לא הופכים עיצוב LTR בדיעבד, כדי שהטקסט, הטפסים והממשק יתנהגו נכון."}
+          },
+          {
+            "@type": "Question",
+            "name": "האם האתר יהיה נגיש?",
+            "acceptedAnswer": {"@type": "Answer", "text": "כן. אנחנו עובדים לפי תקן WCAG: ניגודיות, ניווט מקלדת, טקסט חלופי ותמיכה בקוראי מסך, כולל התאמה לדרישות הנגישות בישראל."}
+          },
+          {
+            "@type": "Question",
+            "name": "מה קורה אחרי ההשקה?",
+            "acceptedAnswer": {"@type": "Answer", "text": "יש מסלול תחזוקה חודשי: עדכונים, גיבויים, ניטור זמינות ותיקוני באגים. אפשר גם בלי — הקוד נשאר שלכם."}
+          },
+          {
+            "@type": "Question",
+            "name": "שומרים לי על הקוד והדומיין?",
+            "acceptedAnswer": {"@type": "Answer", "text": "תמיד. הקוד, התוכן והחשבונות עוברים לבעלותכם בסיום. אף פעם לא נועלים אתכם אצל ספק אחד."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236d5efc'/%3E%3Cpath d='M11 21l5-10 5 10M13 17h6' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- פונטים מקומיים — אפס בקשות חיצוניות. נוצר ע"י tools/fetch-fonts.py -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-plus.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header" id="top">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="סטודיו קוד — דף הבית">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30" role="img">
+            <rect width="32" height="32" rx="8" fill="#6d5efc"/>
+            <path d="M11 21l5-10 5 10M13 17h6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">סטודיו <b>קוד</b></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="ניווט ראשי">
+        <a href="#services">שירותים</a>
+        <a href="#dashboard">דשבורד</a>
+        <a href="#process">תהליך</a>
+        <a href="#pricing">מסלולים</a>
+        <a href="#marketing">שיווק</a>
+        <a href="#faq">שאלות</a>
+        <a class="btn btn-primary nav-cta" href="#contact">דברו איתנו</a>
+        <a class="nav-admin" href="/" title="לוח ניהול הפרויקטים (פנימי)">לוח הניהול</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="פתיחת תפריט">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <!-- שכבת WebGL (three.js) — דקורטיבית, מקומית, ללא CDN. נבנית מהמקור src/hero-3d.js -->
+      <canvas id="hero-3d" aria-hidden="true"></canvas>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="hero-tag">
+            <span class="status-pill"><i aria-hidden="true"></i>פנויים לפרויקטים חדשים · מענה באותו יום עסקים</span>
+          </div>
+          <span class="eyebrow">סטודיו פיתוח ווב · עברית-first</span>
+          <h1>בונים אתרים <span class="grad">מהירים</span>, מדויקים ונגישים.</h1>
+          <p class="lede">
+            מהרעיון ועד ההשקה: עיצוב, קוד, ביצועים, נגישות ותחזוקה —
+            במקום אחד, בלי חיבורים מיותרים ובלי הפתעות.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">פרויקט חדש</a>
+            <a class="btn btn-ghost" href="#services">מה אנחנו עושים</a>
+          </div>
+          <ul class="hero-stats">
+            <li><b data-count="0.9" data-dec="1" data-suffix="s">0.9s</b><span>זמן טעינה ממוצע</span></li>
+            <li><b data-count="100">100</b><span>ציון נגישות יעד</span></li>
+            <li><b>RTL</b><span>עברית וערבית</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <span class="float-chip chip-b"><b>100</b><span>Lighthouse · נגישות</span></span>
+          <span class="float-chip chip-a"><b>0.9s</b><span>LCP · Core Web Vitals</span></span>
+          <div class="code-card">
+            <div class="code-dots"><i></i><i></i><i></i></div>
+            <pre class="code"><code><span class="c-key">const</span> site = <span class="c-fn">build</span>({
+  lang: <span class="c-str">'he'</span>,
+  dir:  <span class="c-str">'rtl'</span>,
+  perf: <span class="c-num">100</span>,
+  a11y: <span class="c-num">100</span>
+});
+<span class="c-cm">// נשלח לאוויר 🚀</span>
+site.<span class="c-fn">deploy</span>();</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trust strip ===== -->
+    <section class="marquee" aria-label="מה כולל השירות">
+      <p class="sr-only">השירות כולל: עברית ו-RTL מההתחלה, נגישות WCAG AA, אופטימיזציית Core Web Vitals, חנויות אונליין, אפליקציות ווב, קידום אורגני, Google Ads, תוכן לסושיאל, אוטומציות אימייל ו-CRM, תחזוקה חודשית, דוחות ומדידה, ומסירה מלאה של הקוד.</p>
+      <ul class="marquee-track" aria-hidden="true">
+        <li>עברית <b>RTL</b> מההתחלה</li>
+        <li>נגישות <b>WCAG AA</b></li>
+        <li>ביצועים <b>100</b></li>
+        <li>חנויות <b>אונליין</b></li>
+        <li>אפליקציות <b>ווב</b></li>
+        <li>קידום <b>אורגני</b></li>
+        <li>Google <b>Ads</b></li>
+        <li>תוכן <b>וסושיאל</b></li>
+        <li>אימייל <b>ו-CRM</b></li>
+        <li>תחזוקה <b>חודשית</b></li>
+        <li>דוחות <b>ומדידה</b></li>
+        <li>מסירת <b>הקוד</b> במלואה</li>
+        <li>עברית <b>RTL</b> מההתחלה</li>
+        <li>נגישות <b>WCAG AA</b></li>
+        <li>ביצועים <b>100</b></li>
+        <li>חנויות <b>אונליין</b></li>
+        <li>אפליקציות <b>ווב</b></li>
+        <li>קידום <b>אורגני</b></li>
+        <li>Google <b>Ads</b></li>
+        <li>תוכן <b>וסושיאל</b></li>
+        <li>אימייל <b>ו-CRM</b></li>
+        <li>תחזוקה <b>חודשית</b></li>
+        <li>דוחות <b>ומדידה</b></li>
+        <li>מסירת <b>הקוד</b> במלואה</li>
+      </ul>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">שירותים</span>
+          <h2>כל מה שדרוש כדי לעלות לאוויר</h2>
+          <p class="sub">שילוב של עיצוב מוקפד, קוד נקי ותשתית איתנה — כדי שהאתר יעבוד ולא רק ייראה טוב.</p>
+        </div>
+
+        <div class="grid cards">
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">◧</div>
+            <h3>אתרים תדמיתיים</h3>
+            <p>דף נחיתה או אתר עסקי מלא, מותאם למותג ולקהל שלכם — עם עברית טבעית וניהול תוכן נוח.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">▤</div>
+            <h3>חנויות אונליין</h3>
+            <p>קטלוג, עגלה, סליקה ומלאי. חוויית קנייה מהירה במובייל, עם מסלול תשלום קצר ובטוח.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">◉</div>
+            <h3>אפליקציות ווב</h3>
+            <p>ממשקים, דשבורדים ואוטומציות. מחברים את המערכות שלכם לאינטרפייס אחד נוח.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">⚡</div>
+            <h3>ביצועים ונגישות</h3>
+            <p>אופטימיזציית Core Web Vitals, תקן נגישות WCAG ועמידה בדרישות רגולציה בישראל.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">◎</div>
+            <h3>קידום אורגני (SEO)</h3>
+            <p>מבנה סמנטי, מטא־דאטה, מהירות וסקריפטים — כדי שגוגל יאהב אתכם בדיוק כמו הגולשים.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">⟳</div>
+            <h3>תחזוקה ותמיכה</h3>
+            <p>עדכונים, גיבויים, ניטור זמינות ותיקוני באגים — בשקט וללא כאב ראש.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Dashboard ===== -->
+    <section class="section alt" id="dashboard">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">דשבורד</span>
+          <h2>הדשבורד שמראה מה עובד</h2>
+          <p class="sub">מסך אחד במקום חמישה דוחות: תנועה, לידים, המרות והכנסות. מתעדכן אוטומטית, עובד במובייל, ומראה בדיוק איזה ערוץ מכניס כסף ואיזה שורף תקציב.</p>
+        </div>
+
+        <div class="dash reveal" id="dash">
+          <div class="dash-bar">
+            <div class="dash-tabs" role="tablist" aria-label="תצוגות דשבורד">
+              <button type="button" class="dash-tab is-on" role="tab" id="tab-overview" data-tab="overview" aria-selected="true" aria-controls="dashPanel">סקירה</button>
+              <button type="button" class="dash-tab" role="tab" id="tab-traffic" data-tab="traffic" aria-selected="false" aria-controls="dashPanel" tabindex="-1">תנועה</button>
+              <button type="button" class="dash-tab" role="tab" id="tab-leads" data-tab="leads" aria-selected="false" aria-controls="dashPanel" tabindex="-1">לידים</button>
+              <button type="button" class="dash-tab" role="tab" id="tab-sales" data-tab="sales" aria-selected="false" aria-controls="dashPanel" tabindex="-1">מכירות</button>
+            </div>
+            <span class="dash-badge"><i aria-hidden="true"></i>30 הימים האחרונים</span>
+          </div>
+
+          <div class="dash-panel" id="dashPanel" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+            <ul class="kpis">
+              <li><span>מבקרים</span><b data-kpi="visitors">—</b><i class="k-delta" data-delta="visitors">—</i></li>
+              <li><span>לידים</span><b data-kpi="leads">—</b><i class="k-delta" data-delta="leads">—</i></li>
+              <li><span>שיעור המרה</span><b data-kpi="cr">—</b><i class="k-delta" data-delta="cr">—</i></li>
+              <li><span>הכנסות</span><b data-kpi="revenue">—</b><i class="k-delta" data-delta="revenue">—</i></li>
+            </ul>
+
+            <div class="chart">
+              <div class="chart-head">
+                <b data-chart-title>הכנסות לפי חודש</b>
+                <span class="muted" data-chart-unit>₪ באלפים</span>
+              </div>
+              <ul class="bars" data-bars aria-hidden="true"></ul>
+              <ul class="bars-x" data-bars-x aria-hidden="true"></ul>
+            </div>
+
+            <div class="table-wrap">
+              <table class="dash-table">
+                <caption class="muted">פילוח מקורות — <span data-table-caption>סקירה</span></caption>
+                <thead>
+                  <tr><th scope="col">מקור</th><th scope="col">ביקורים</th><th scope="col">לידים</th><th scope="col">המרה</th></tr>
+                </thead>
+                <tbody data-rows></tbody>
+              </table>
+            </div>
+          </div>
+
+          <p class="dash-note">הדגמה בלבד — המספרים בדשבורד הם נתוני דוגמה להמחשה, לא נתוני לקוח אמיתי.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">איך זה עובד</span>
+          <h2>תהליך פשוט, תוצאה מדויקת</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span class="step-n">01</span><h3>אפיון</h3><p>שיחה קצרה, הבנת המטרה והקהל, והגדרת הצלחה במספרים.</p></li>
+          <li class="reveal"><span class="step-n">02</span><h3>עיצוב</h3><p>מסך־מסך, RTL מלא, ומערכת עיצוב אחידה לפני שורת קוד אחת.</p></li>
+          <li class="reveal"><span class="step-n">03</span><h3>פיתוח</h3><p>קוד נקי ומהיר, תצוגות מקדימות לאורך הדרך ואינטגרציה מלאה.</p></li>
+          <li class="reveal"><span class="step-n">04</span><h3>השקה ותמיכה</h3><p>עלייה לאוויר חלקה, בדיקות חדר־אחרון, וליווי שוטף אחרי.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Stack ===== -->
+    <section class="section alt" id="stack">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">טכנולוגיות</span>
+          <h2>עובדים עם הכלים הנכונים</h2>
+          <p class="sub">בוחרים סטאק לפי הצורך — לא לפי אופנה. הכל סטנדרטי, מתועד ולא נועל אתכם לספק יחיד.</p>
+        </div>
+        <ul class="stack">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li>
+          <li>React</li><li>Next.js</li><li>Node.js</li><li>Tailwind</li>
+          <li>WordPress</li><li>Shopify</li><li>Vercel</li><li>Git</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">מסלולים</span>
+          <h2>מסלולים לדוגמה</h2>
+          <p class="sub notice">המחירים שלהלן הם <b>הדגמה בלבד</b> באתר זה, ואינם הצעת מחיר.</p>
+        </div>
+
+        <div class="grid plans">
+          <article class="plan reveal">
+            <h3>נוכחות</h3>
+            <p class="plan-for">דף נחיתה / אתר תדמית קטן</p>
+            <div class="price"><span>₪</span>2,900<small>החל מ־</small></div>
+            <ul class="plan-list">
+              <li>עד 4 עמודים</li><li>עיצוב מותאם + RTL</li><li>טופס יצירת קשר</li><li>SEO בסיסי</li>
+            </ul>
+            <a class="btn btn-ghost full" href="#contact">בחרו מסלול</a>
+          </article>
+
+          <article class="plan featured reveal">
+            <span class="tag">הנפוץ</span>
+            <h3>עסקי</h3>
+            <p class="plan-for">אתר עסקי מלא / חנות</p>
+            <div class="price"><span>₪</span>7,900<small>החל מ־</small></div>
+            <ul class="plan-list">
+              <li>עד 12 עמודים</li><li>ניהול תוכן</li><li>חנות + סליקה</li><li>אופטימיזציית ביצועים</li><li>נגישות WCAG AA</li>
+            </ul>
+            <a class="btn btn-primary full" href="#contact">בחרו מסלול</a>
+          </article>
+
+          <article class="plan reveal">
+            <h3>אפליקציה</h3>
+            <p class="plan-for">ווב אפ / אינטגרציות</p>
+            <div class="price"><span>₪</span>15,000<small>החל מ־</small></div>
+            <ul class="plan-list">
+              <li>אפיון מלא</li><li>דשבורד וממשק משתמש</li><li>אינטגרציות API</li><li>ליווי שוטף</li>
+            </ul>
+            <a class="btn btn-ghost full" href="#contact">בחרו מסלול</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Marketing ===== -->
+    <section class="section alt" id="marketing">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">שיווק וצמיחה</span>
+          <h2>שיווק שמביא פניות, לא רק חשיפות</h2>
+          <p class="sub">בונים משפך מדיד אחד: מהחיפוש בגוגל ועד פנייה שנכנסת למייל. כל שקל מקבל מספר, וכל חודש יודעים מה עבד ומה מחליפים.</p>
+        </div>
+
+        <ol class="funnel">
+          <li class="f1 reveal"><b>48,000</b><span>חשיפות בחודש</span><i aria-hidden="true"></i></li>
+          <li class="f2 reveal"><b>2,400</b><span>כניסות לאתר</span><i aria-hidden="true"></i></li>
+          <li class="f3 reveal"><b>318</b><span>פניות (לידים)</span><i aria-hidden="true"></i></li>
+          <li class="f4 reveal"><b>46</b><span>לקוחות משלמים</span><i aria-hidden="true"></i></li>
+        </ol>
+
+        <div class="grid cards">
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">SEO</div>
+            <h3>קידום אורגני</h3>
+            <p>מבנה סמנטי, תוכן שמדבר לקהל ודפים שנטענים מהר. התנועה ממשיכה גם כשהקמפיין כבוי.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">Ads</div>
+            <h3>Google Ads</h3>
+            <p>קמפיינים לפי כוונת חיפוש, מעקב המרות ומילים שליליות. בלי לשלם על קליקים שלא יביאו פנייה.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">Social</div>
+            <h3>סושיאל ותוכן</h3>
+            <p>אינסטגרם, פייסבוק וטיקטוק: תוכן קצר וקבוע שבונה אמון ומזרים תנועה לדף הנחיתה.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-ico" aria-hidden="true">CRM</div>
+            <h3>אימייל ו‑CRM</h3>
+            <p>רשימת תפוצה, אוטומציות ומעקב אחרי פניות — כדי שאף ליד לא ייפול בין הכיסאות.</p>
+          </article>
+        </div>
+
+        <div class="grid plans mk-plans">
+          <article class="plan reveal">
+            <h3>נוכחות</h3>
+            <p class="plan-for">למי שצריך נוכחות קבועה ועקבית.</p>
+            <div class="price"><span>₪</span>1,450<small>לחודש</small></div>
+            <ul class="plan-list">
+              <li>ניהול 2 ערוצי סושיאל</li>
+              <li>12 פוסטים בחודש</li>
+              <li>אופטימיזציה בסיסית לאתר</li>
+              <li>דוח חודשי פשוט</li>
+            </ul>
+            <a class="btn btn-ghost full" href="#contact">בחרו מסלול</a>
+          </article>
+
+          <article class="plan featured reveal">
+            <span class="tag">הכי נבחר</span>
+            <h3>צמיחה</h3>
+            <p class="plan-for">לעסקים שרוצים עוד פניות כל חודש.</p>
+            <div class="price"><span>₪</span>2,900<small>לחודש</small></div>
+            <ul class="plan-list">
+              <li>קידום אורגני ל‑5 ביטויים</li>
+              <li>ניהול Google Ads עד ₪1,500 תקציב</li>
+              <li>דף נחיתה עם בדיקות A/B</li>
+              <li>לוח בקרה חי בדשבורד</li>
+            </ul>
+            <a class="btn btn-primary full" href="#contact">דברו איתנו</a>
+          </article>
+
+          <article class="plan reveal">
+            <h3>מנוע צמיחה</h3>
+            <p class="plan-for">לעסקים שרוצים צוות שיווק בלי לגייס אחד.</p>
+            <div class="price"><span>₪</span>5,400<small>לחודש</small></div>
+            <ul class="plan-list">
+              <li>כל מה שיש במסלול צמיחה</li>
+              <li>אימייל מרקטינג ו‑CRM</li>
+              <li>תוכן שבועי ומחקרי מילות מפתח</li>
+              <li>פגישת אסטרטגיה חודשית</li>
+            </ul>
+            <a class="btn btn-ghost full" href="#contact">בחרו מסלול</a>
+          </article>
+        </div>
+
+        <p class="mk-foot">דמי הקמה חד‑פעמיים במסלולי השיווק: ₪980 (אפיון, הקמת מעקב המרות ופתיחת קמפיינים). המחירים להדגמה בלבד.</p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <span class="eyebrow">שאלות נפוצות</span>
+          <h2>עונים על מה שחשוב</h2>
+        </div>
+        <div class="faq">
+          <details class="qa"><summary>כמה זמן לוקח פרויקט?</summary><p>אתר תדמית קטן: כ־1–2 שבועות. אתר עסקי או חנות: 3–6 שבועות. אפליקציה: לפי אפיון. תמיד עם לוח זמנים חתום לפני שמתחילים.</p></details>
+          <details class="qa"><summary>האתר יהיה בעברית ובכיוון RTL?</summary><p>כן, כברירת מחדל. אנחנו בונים RTL מההתחלה — לא הופכים עיצוב LTR בדיעבד, כדי שהטקסט, הטפסים והממשק יתנהגו נכון.</p></details>
+          <details class="qa"><summary>האם האתר יהיה נגיש?</summary><p>כן. אנחנו עובדים לפי תקן WCAG: ניגודיות, ניווט מקלדת, טקסט חלופי ותמיכה בקוראי מסך, כולל התאמה לדרישות הנגישות בישראל.</p></details>
+          <details class="qa"><summary>מה קורה אחרי ההשקה?</summary><p>יש מסלול תחזוקה חודשי: עדכונים, גיבויים, ניטור זמינות ותיקוני באגים. אפשר גם בלי — הקוד נשאר שלכם.</p></details>
+          <details class="qa"><summary>שומרים לי על הקוד והדומיין?</summary><p>תמיד. הקוד, התוכן והחשבונות עוברים לבעלותכם בסיום. אף פעם לא נועלים אתכם אצל ספק אחד.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section alt" id="contact">
+      <div class="wrap contact-wrap">
+        <div class="contact-copy">
+          <span class="eyebrow">יצירת קשר</span>
+          <h2>ספרו לנו על הפרויקט</h2>
+          <p class="sub">נחזור אליכם עם שאלות והצעה ראשונית. <b>הפנייה נקלטת אוטומטית בלוח הניהול של הסטודיו.</b></p>
+          <ul class="contact-facts">
+            <li><span aria-hidden="true">✉</span> <a href="mailto:hello@example.co.il" dir="ltr">hello@example.co.il</a> <em>(לדוגמה)</em></li>
+            <li><span aria-hidden="true">☎</span> <a href="tel:+972500000000" dir="ltr">+972 50-000-0000</a> <em>(לדוגמה)</em></li>
+            <li><span aria-hidden="true">⌖</span> תל אביב · עבודה מרחוק בכל הארץ</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">שם מלא</label>
+            <input type="text" id="name" name="name" autocomplete="name" required minlength="2" placeholder="ישראל ישראלי">
+            <span class="err" data-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">דוא״ל</label>
+            <input type="email" id="email" name="email" dir="ltr" autocomplete="email" required placeholder="you@example.com">
+            <span class="err" data-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="phone">טלפון <span class="opt">(אופציונלי)</span></label>
+            <input type="tel" id="phone" name="phone" dir="ltr" autocomplete="tel" placeholder="050-0000000">
+            <span class="err" data-for="phone"></span>
+          </div>
+          <div class="field">
+            <label for="budget">תקציב משוער</label>
+            <select id="budget" name="budget" aria-label="תקציב משוער">
+              <option value="">בחרו…</option>
+              <option>עד 5,000 ₪</option>
+              <option>5,000–15,000 ₪</option>
+              <option>15,000 ₪ ומעלה</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">פרטים על הפרויקט</label>
+            <textarea id="message" name="message" rows="4" required minlength="10" placeholder="מה בונים, למי, ומתי צריך באוויר?"></textarea>
+            <span class="err" data-for="message"></span>
+          </div>
+          <button class="btn btn-primary full" type="submit">שליחת פנייה</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="form-note">* השליחה יוצרת ליד בלוח הניהול ומייצרת אישור אוטומטי. בטופס הדגמה, הנתונים נשמרים מקומית בלבד.</p>
+        </form>
+      </div>
+    </section>
+    <!-- ===== CTA band ===== -->
+    <section class="section" id="start">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <h2>מוכנים לעלות לאוויר?</h2>
+          <p>שיחה קצרה, אפיון מסודר והצעה ברורה — בלי התחייבות ובלי מונחים מסובכים. נחזור אליכם באותו יום עסקים.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#contact">ספרו לנו על הפרויקט</a>
+            <a class="btn btn-ghost" href="#pricing">ראו מסלולים</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="8" fill="#6d5efc"/><path d="M11 21l5-10 5 10M13 17h6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand-text">סטודיו <b>קוד</b></span>
+        </a>
+        <p>בונים אתרים ואפליקציות ווב — מהרעיון ועד האוויר.</p>
+      </div>
+      <nav class="footer-col" aria-label="שירותים">
+        <h4>שירותים</h4>
+        <a href="#services">אתרים תדמיתיים</a>
+        <a href="#services">חנויות אונליין</a>
+        <a href="#services">אפליקציות ווב</a>
+        <a href="#dashboard">דשבורד לניהול</a>
+      </nav>
+      <nav class="footer-col" aria-label="חברה">
+        <h4>סטודיו</h4>
+        <a href="#process">תהליך עבודה</a>
+        <a href="#stack">טכנולוגיות</a>
+        <a href="#pricing">מסלולים</a>
+        <a href="#marketing">שיווק וצמיחה</a>
+        <a href="#faq">שאלות נפוצות</a>
+      </nav>
+      <div class="footer-col">
+        <h4>יצירת קשר</h4>
+        <a href="mailto:hello@example.co.il" dir="ltr">hello@example.co.il</a>
+        <a href="tel:+972500000000" dir="ltr">+972 50-000-0000</a>
+        <span class="muted">תל אביב, ישראל</span>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© <span id="year"></span> סטודיו קוד · אתר הדגמה</span>
+      <span class="muted">נבנה עם HTML, CSS ו-JavaScript בלבד</span>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="חזרה למעלה" hidden>↑</button>
+
+  <script src="script.js" defer></script>
+  <script src="assets/vendor/hero-3d.min.js" defer></script>
+</body>
+</html>

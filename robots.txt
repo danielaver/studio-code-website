@@ -1,0 +1,10 @@
+# סטודיו קוד — robots.txt (נוצר ע"י tools/seo.py; האתר השיווקי: __SITE_URL__)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /clients/
+Disallow: /marketing/shots/
+Disallow: /marketing/tools/
+
+Sitemap: __SITE_URL__sitemap.xml

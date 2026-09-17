@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>דמואים לפי סוג עסק — סטודיו קוד</title>
+<style>
+:root{--bg:#0e1116;--card:#161b22;--fg:#e9eef5;--mut:#9aa7b4;--line:#242c36;--acc:#6ea8fe}
+*{box-sizing:border-box}
+body{margin:0;padding:40px 22px 70px;background:var(--bg);color:var(--fg);
+  font-family:"Heebo",-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-size:clamp(26px,4vw,40px);margin:0 0 10px}
+p.lead{color:var(--mut);margin:0 0 28px;max-width:70ch}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+a.card{display:block;text-decoration:none;color:inherit;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:.15s}
+a.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.sw{width:100%;height:8px;border-radius:99px;margin-bottom:12px}
+.nm{font-weight:700;font-size:17px;margin-bottom:4px}
+.cat{color:var(--mut);font-size:13px}
+.note{margin-top:30px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--mut);font-size:14px}
+.top{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{display:inline-block;padding:10px 18px;border-radius:99px;text-decoration:none;
+  background:var(--acc);color:#08101c;font-weight:700}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>דמואים לפי סוג עסק</h1>
+  <p class="lead">18 אתרים לדוגמה — כל אחד נבנה מהתבנית של אותה קטגוריה, בעברית ובכיוון RTL.
+     פותחים, רואים איך זה נראה בנייד ובמחשב, ומזמינים אחד משלכם.</p>
+  <div class="top">
+    <a class="btn" href="../">חזרה לאתר הסטודיו</a>
+    <a class="btn ghost" href="../#contact">להזמנת אתר</a>
+  </div>
+  <div class="grid">
+    <a class="card" href="./build/">
+      <div class="sw" style="background:#f2b337"></div>
+      <div class="nm">שיפוצים ובנייה</div>
+      <div class="cat">בנייה, שיפוצים וטכנאים · build</div>
+    </a>
+    <a class="card" href="./pet/">
+      <div class="sw" style="background:#4a7c3f"></div>
+      <div class="nm">מספרת כלבים וטרינריה</div>
+      <div class="cat">בעלי חיים · pet</div>
+    </a>
+    <a class="card" href="./clinic/">
+      <div class="sw" style="background:#1c6f8f"></div>
+      <div class="nm">קליניקה פרטית</div>
+      <div class="cat">בריאות וקליניקה · clinic</div>
+    </a>
+    <a class="card" href="./tutor/">
+      <div class="sw" style="background:#c25b2c"></div>
+      <div class="nm">מורה פרטי / מרכז לימוד</div>
+      <div class="cat">חינוך והדרכה · tutor</div>
+    </a>
+    <a class="card" href="./tech/">
+      <div class="sw" style="background:#5b8cff"></div>
+      <div class="nm">שירותי מחשוב ותמיכה</div>
+      <div class="cat">טכנולוגיה ומחשבים · tech</div>
+    </a>
+    <a class="card" href="./yoga/">
+      <div class="sw" style="background:#7a6bb5"></div>
+      <div class="nm">סטודיו יוגה ופילאטיס</div>
+      <div class="cat">יוגה ומיינדפולנס · yoga</div>
+    </a>
+    <a class="card" href="./nails/">
+      <div class="sw" style="background:#c2497f"></div>
+      <div class="nm">ציפורניים וריסים</div>
+      <div class="cat">יופי וקוסמטיקה · nails</div>
+    </a>
+    <a class="card" href="./gym/">
+      <div class="sw" style="background:#ff6b2c"></div>
+      <div class="nm">חדר כושר ומכון אימון</div>
+      <div class="cat">כושר ואימון · gym</div>
+    </a>
+    <a class="card" href="./bakery/">
+      <div class="sw" style="background:#b8801f"></div>
+      <div class="nm">מאפייה שכונתית</div>
+      <div class="cat">מאפייה וקונדיטוריה · bakery</div>
+    </a>
+    <a class="card" href="./grocery/">
+      <div class="sw" style="background:#1f7a4d"></div>
+      <div class="nm">מכולת שכונתית</div>
+      <div class="cat">מזון וקמעונאות · grocery</div>
+    </a>
+    <a class="card" href="./food/">
+      <div class="sw" style="background:#e0a34a"></div>
+      <div class="nm">מסעדה שכונתית</div>
+      <div class="cat">מסעדנות ואירוח · food</div>
+    </a>
+    <a class="card" href="./hair/">
+      <div class="sw" style="background:#d9a6a0"></div>
+      <div class="nm">מספרה שכונתית</div>
+      <div class="cat">מספרה וטיפוח שיער · hair</div>
+    </a>
+    <a class="card" href="./law/">
+      <div class="sw" style="background:#1f3f73"></div>
+      <div class="nm">משרד עורכי דין</div>
+      <div class="cat">משרדים ומקצועות · law</div>
+    </a>
+    <a class="card" href="./clean/">
+      <div class="sw" style="background:#0f8f8f"></div>
+      <div class="nm">שירותי ניקיון</div>
+      <div class="cat">ניקיון ותחזוקה · clean</div>
+    </a>
+    <a class="card" href="./general/">
+      <div class="sw" style="background:#3b5bdb"></div>
+      <div class="nm">עסק מקומי</div>
+      <div class="cat">עסק · general</div>
+    </a>
+    <a class="card" href="./photo/">
+      <div class="sw" style="background:#e8e2d8"></div>
+      <div class="nm">צלם מקצועי</div>
+      <div class="cat">צילום וקריאייטיב · photo</div>
+    </a>
+    <a class="card" href="./pottery/">
+      <div class="sw" style="background:#b4623a"></div>
+      <div class="nm">סטודיו קרמיקה וכלי בית</div>
+      <div class="cat">קרמיקה ומלאכת יד · pottery</div>
+    </a>
+    <a class="card" href="./bike/">
+      <div class="sw" style="background:#3ea6d8"></div>
+      <div class="nm">מעבדת אופניים</div>
+      <div class="cat">רכב, אופניים ומוסך · bike</div>
+    </a>
+  </div>
+  <div class="note">הדמואים להמחשה בלבד: פרטי הקשר בכל דמו הם placeholders, והתמונות הן איורי דמה מקומיים.
+     באתר אמיתי מוטמעים התמונות, הפרטים והתוכן של העסק שלכם.</div>
+</div>
+</body>
+</html>

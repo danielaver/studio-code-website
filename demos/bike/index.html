@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מעבדת אופניים — רכב, אופניים ומוסך</title>
+<meta name="description" content="שירות מקומי, יחס אישי ומענה מהיר. נשמח לעמוד לרשותכם.">
+<meta name="theme-color" content="#3ea6d8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="מעבדת אופניים — רכב, אופניים ומוסך">
+<meta property="og:description" content="שירות מקומי, יחס אישי ומענה מהיר. נשמח לעמוד לרשותכם.">
+<meta property="og:locale" content="he_IL">
+<!-- גופן מקומי (self-hosted) + תמונות מקומיות: אין בקשות חיצוניות מהדפדפן -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='12' fill='%233ea6d8'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "מעבדת אופניים", "description": "שירות מקומי, יחס אישי ומענה מהיר. נשמח לעמוד לרשותכם.", "telephone": "050-0000000", "email": "demo@example.co.il", "areaServed": "IL", "url": "./"}</script>
+<style>
+@font-face{font-family:'Heebo';font-style:normal;font-weight:300 900;font-display:swap;src:url('assets/fonts/heebo-hebrew.woff2') format('woff2');unicode-range:U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F}
+@font-face{font-family:'Heebo';font-style:normal;font-weight:300 900;font-display:swap;src:url('assets/fonts/heebo-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+:root{
+ --accent:#3ea6d8; --accent2:#22779f; --ink:#eef4f8; --bg:#0e1316;
+ --surface:#161d22; --soft:#202a30; --mut:#898f92; --line:#3f4448;
+ --shadow:0 18px 50px -22px rgba(0,0,0,0.22);
+ --r:18px; --max:1140px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font-family:"Heebo","Segoe UI",system-ui,Arial,sans-serif;line-height:1.65;
+ -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.2;margin:0}
+h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;letter-spacing:-.4px}
+.sec{padding:76px 0}
+.sec.alt{background:var(--soft)}
+.head{max-width:660px;margin-bottom:38px}
+.head .eyebrow{color:var(--accent);font-weight:700;font-size:14px;letter-spacing:.4px}
+.head p{color:var(--mut);font-size:17px;margin:12px 0 0}
+.i{width:20px;height:20px;flex:0 0 auto}
+.i.sm{width:16px;height:16px}
+
+/* ---------- topbar ---------- */
+.topbar{background:var(--accent2);color:#fff;font-size:14px}
+.topbar .wrap{display:flex;gap:20px;align-items:center;justify-content:flex-start;
+ flex-wrap:wrap;min-height:40px;padding-top:6px;padding-bottom:6px}
+.topbar a,.topbar .tb-i{display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+ opacity:.94}
+.topbar a:hover{opacity:1;text-decoration:underline}
+
+/* ---------- header ---------- */
+.site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--surface) 88%,transparent);
+ backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;gap:18px;min-height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
+.brand b{font-size:19px;font-weight:800;display:block;line-height:1.15}
+.brand span{font-size:12.5px;color:var(--mut);display:block}
+.nav{margin-inline-start:auto;display:flex;gap:26px;align-items:center}
+.nav a{text-decoration:none;font-weight:500;font-size:15.5px;color:var(--ink);opacity:.82;
+ padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{opacity:1;border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;
+ font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;
+ border:1px solid transparent;transition:.18s transform,.18s box-shadow;font-size:15.5px}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.lg{padding:16px 30px;font-size:17px}
+.burger{display:none;margin-inline-start:auto;background:none;border:1px solid var(--line);
+ border-radius:12px;padding:9px 11px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:4px 0}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 70px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{background:var(--soft);color:var(--accent2);font-size:13.5px;font-weight:600;
+ padding:6px 13px;border-radius:999px}
+.hero h1{font-size:clamp(30px,4.6vw,52px);font-weight:800;letter-spacing:-1px}
+.hero .lead{color:var(--mut);font-size:clamp(16px,2vw,19px);margin:18px 0 0;max-width:52ch}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;padding:0;list-style:none;
+ font-size:15px;color:var(--mut)}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust .i{color:var(--accent)}
+.hero-media{position:relative}
+.hero-media img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:26px;
+ box-shadow:var(--shadow)}
+.float-card{position:absolute;inset-inline-start:-26px;bottom:26px;background:var(--surface);
+ border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow);
+ display:flex;gap:12px;align-items:center;max-width:280px}
+.float-card .i{color:var(--accent);width:26px;height:26px}
+.float-card b{display:block;font-size:15px}
+.float-card small{color:var(--mut);font-size:13px}
+
+/* ---------- value props ---------- */
+.vp{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vp-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:26px 24px;box-shadow:var(--shadow)}
+.vp-ic{display:inline-flex;width:44px;height:44px;border-radius:13px;background:var(--soft);
+ color:var(--accent);align-items:center;justify-content:center;margin-bottom:14px}
+.vp-card h3{font-size:18px}
+.vp-card p{color:var(--mut);margin:8px 0 0;font-size:15.5px}
+
+/* ---------- services ---------- */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:.2s transform}
+.svc:hover{transform:translateY(-3px)}
+.svc-ic{width:52px;height:52px;border-radius:15px;background:var(--accent);color:#fff;
+ display:flex;align-items:center;justify-content:center}
+.svc-ic .i{width:26px;height:26px}
+.svc h3{font-size:19px}
+.svc p{color:var(--mut);margin:0;font-size:15.5px;flex:1}
+.svc-link{color:var(--accent);font-weight:700;text-decoration:none;display:inline-flex;
+ align-items:center;gap:7px;font-size:15px}
+.svc-link:hover{text-decoration:underline}
+
+/* ---------- about / split ---------- */
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:50px;align-items:center}
+.split img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:26px;
+ box-shadow:var(--shadow)}
+.split .body p{color:var(--mut);font-size:16.5px}
+.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+.checks .i{color:var(--accent);margin-top:4px}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal-i{display:block;overflow:hidden;border-radius:16px;border:1px solid var(--line);
+ background:var(--soft);aspect-ratio:1/1}
+.gal-i.wide{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gal-i img{width:100%;height:100%;object-fit:cover;transition:.35s transform}
+.gal-i:hover img{transform:scale(1.05)}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);
+ gap:22px;counter-reset:s}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:24px 22px}
+.steps .num{display:inline-flex;width:34px;height:34px;border-radius:10px;
+ background:var(--accent);color:#fff;font-weight:800;align-items:center;
+ justify-content:center;margin-bottom:12px}
+.steps h3{font-size:17px}
+.steps p{color:var(--mut);font-size:15px;margin:8px 0 0}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px;display:grid;gap:12px}
+.faq-i{background:var(--surface);border:1px solid var(--line);border-radius:15px;
+ padding:18px 20px}
+.faq-i summary{display:flex;justify-content:space-between;align-items:center;gap:14px;
+ font-weight:700;cursor:pointer;list-style:none;font-size:16.5px}
+.faq-i summary::-webkit-details-marker{display:none}
+.faq-i .chev{transition:.2s transform}
+.faq-i[open] .chev{transform:rotate(180deg)}
+.faq-i p{color:var(--mut);margin:12px 0 0;font-size:15.5px}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:1fr 1.05fr;gap:44px}
+.c-info{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:16px}
+.c-info li{display:flex;gap:14px;align-items:flex-start}
+.c-info .i{color:var(--accent);width:22px;height:22px;margin-top:3px}
+.c-info strong{display:block;font-size:15px}
+.c-info span,.c-info a{color:var(--mut);text-decoration:none;font-size:15.5px}
+.c-info a:hover{color:var(--accent)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+ padding:26px;box-shadow:var(--shadow)}
+.field{margin-bottom:14px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
+ background:var(--bg);color:var(--ink);font:inherit;font-size:15.5px}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.form-note{color:var(--mut);font-size:13.5px;margin:12px 0 0}
+
+/* ---------- cta band ---------- */
+.band{background:linear-gradient(115deg,var(--accent),var(--accent2));color:#fff;
+ border-radius:26px;padding:44px;display:flex;gap:26px;align-items:center;
+ justify-content:space-between;flex-wrap:wrap}
+.band h2{font-size:clamp(22px,3vw,32px)}
+.band p{margin:10px 0 0;opacity:.92}
+.band .btn{background:#fff;color:var(--accent2)}
+
+/* ---------- footer ---------- */
+footer{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 26px;
+ margin-top:70px}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px}
+footer h4{font-size:15.5px;margin:0 0 14px}
+.f-links{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.f-links a{text-decoration:none;color:var(--mut);font-size:15px}
+.f-links a:hover{color:var(--accent)}
+.f-about{color:var(--mut);font-size:15px;margin:14px 0 0;max-width:34ch}
+.f-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
+ display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ color:var(--mut);font-size:14px}
+.wa-float{position:fixed;inset-inline-start:22px;bottom:22px;z-index:50;background:#25d366;
+ color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;
+ justify-content:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.45);text-decoration:none}
+.wa-float .i{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.05)}
+
+[data-reveal]{opacity:0;transform:translateY(16px);transition:.6s opacity,.6s transform}
+[data-reveal].in{opacity:1;transform:none}
+.nojs [data-reveal],html:not(.js) [data-reveal]{opacity:1;transform:none}
+
+@media(max-width:960px){
+ .hero .wrap,.split,.contact{grid-template-columns:1fr;gap:34px}
+ .vp,.svcs,.steps{grid-template-columns:1fr 1fr}
+ .f-grid{grid-template-columns:1fr 1fr}
+ .float-card{inset-inline-start:16px}
+}
+@media(max-width:680px){
+ .nav{position:fixed;inset:0 0 0 auto;width:min(84vw,320px);background:var(--surface);
+  flex-direction:column;align-items:flex-start;gap:4px;padding:84px 24px;transform:translateX(-105%);
+  transition:.25s transform;box-shadow:var(--shadow);margin:0}
+ html[dir=rtl] .nav{inset:0 auto 0 0;transform:translateX(105%)}
+ .nav.open{transform:none}
+ .nav a{width:100%;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px}
+ .nav .btn{width:100%;justify-content:center;margin-top:14px;border-bottom:none}
+ .burger{display:block}
+ .vp,.svcs,.steps,.gal,.f-grid{grid-template-columns:1fr}
+ .gal-i.wide{grid-column:span 1;grid-row:span 1;aspect-ratio:4/3}
+ .sec{padding:56px 0}
+ .band{padding:30px 24px}
+ .topbar .tb-i:last-child{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap"><a href="tel:0500000000"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>050-0000000</span></a><a href="mailto:demo@example.co.il"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><span>demo@example.co.il</span></a><span class="tb-i"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>מענה מהיר בוואטסאפ</span></span></div></div>
+
+<header class="site-head">
+ <div class="wrap">
+  <a class="brand" href="#top"><svg viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="מעבדת אופניים"><rect width="44" height="44" rx="13" fill="#3ea6d8"/><text x="22" y="30" text-anchor="middle" font-family="Heebo,Arial" font-size="22" font-weight="700" fill="#fff">מ</text></svg>
+   <span><b>מעבדת אופניים</b><span>רכב, אופניים ומוסך</span></span></a>
+  <nav class="nav" id="nav"><a href="#services">שירותים</a><a href="#about">אודות</a><a href="#gallery">גלריה</a><a href="#faq">שאלות נפוצות</a><a href="#contact">יצירת קשר</a>
+   <a class="btn" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener"><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.9 9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.03.24-2.93-.6-2.29-1.02-3.75-3.4-3.86-3.56-.11-.16-.92-1.28-.92-2.44 0-1.16.6-1.73.82-1.97.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.42.19.48.66 1.66.72 1.78.06.12.1.26.02.42-.08.16-.15.26-.3.42-.15.16-.31.36-.44.48-.15.14-.3.3-.13.58.17.28.76 1.24 1.62 2.01 1.11.98 2.04 1.29 2.32 1.43.28.14.45.12.62-.07.17-.19.7-.82.89-1.1.19-.28.38-.23.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg>לשיחת ייעוץ</a></nav>
+  <button class="burger" id="burger" aria-label="פתיחת תפריט" aria-expanded="false">
+   <span></span><span></span><span></span></button>
+ </div>
+</header>
+
+<main id="top">
+
+<section class="hero"><div class="wrap">
+ <div>
+  <div class="chips"><span class="chip">רכב, אופניים ומוסך</span>
+   <span class="chip">מענה בוואטסאפ</span><span class="chip">הצעת מחיר ללא התחייבות</span></div>
+  <h1>מעבדת אופניים — רכב, אופניים ומוסך</h1>
+  <p class="lead">שירות מקומי, יחס אישי ומענה מהיר. נשמח לעמוד לרשותכם.</p>
+  <div class="cta-row">
+   <a class="btn lg" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener"><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.9 9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.03.24-2.93-.6-2.29-1.02-3.75-3.4-3.86-3.56-.11-.16-.92-1.28-.92-2.44 0-1.16.6-1.73.82-1.97.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.42.19.48.66 1.66.72 1.78.06.12.1.26.02.42-.08.16-.15.26-.3.42-.15.16-.31.36-.44.48-.15.14-.3.3-.13.58.17.28.76 1.24 1.62 2.01 1.11.98 2.04 1.29 2.32 1.43.28.14.45.12.62-.07.17-.19.7-.82.89-1.1.19-.28.38-.23.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg>לשיחת ייעוץ</a>
+   <a class="btn ghost lg" href="#services">לשירותים שלנו</a>
+  </div>
+  <ul class="trust"><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>אבחון כן ומדויק</li><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>חלפים איכותיים</li><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>עבודה בזמן</li></ul>
+ </div>
+ <div class="hero-media">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ea6d8"/><stop offset="1" stop-color="#202a30"/></linearGradient></defs><rect width="1200" height="800" fill="url(#g)"/><g fill="rgba(255,255,255,.14)"><circle cx="216" cy="400" r="336"/><circle cx="960" cy="160" r="480"/></g><text x="50%" y="52%" text-anchor="middle" font-family="Heebo,Arial" font-size="224" font-weight="700" fill="rgba(255,255,255,.55)">מא</text></svg>
+  <div class="float-card"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span><b>מדברים איתנו</b>
+   <small>050-0000000</small></span></div>
+ </div>
+</div></section>
+
+<section class="sec alt" id="why"><div class="wrap">
+ <div class="head"><div class="eyebrow">למה אנחנו</div>
+  <h2>מה שאנחנו שמים עליו דגש</h2>
+  <p>עבודה מקצועית, יחס אישי וזמינות אמיתית לאורך כל הדרך.</p></div>
+ <div class="vp"><article class="vp-card" data-reveal><span class="vp-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3>אבחון כן ומדויק</h3><p>אבחון מדויק</p></article><article class="vp-card" data-reveal><span class="vp-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3>חלפים איכותיים</h3><p>חלפים איכותיים</p></article><article class="vp-card" data-reveal><span class="vp-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h3>עבודה בזמן</h3><p>עבודה בזמן</p></article></div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap">
+ <div class="head"><div class="eyebrow">שירותים</div>
+  <h2>מה אנחנו נותנים ללקוחות</h2>
+  <p>השירותים המרכזיים שלנו, בקצרה ובבירור.</p></div>
+ <div class="svcs"><article class="svc" data-reveal><span class="svc-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></span><h3>טיפולים ותיקונים</h3><p>טיפול תקופתי ותיקון תקלות.</p><a class="svc-link" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D">בדיקת זמינות <svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></a></article><article class="svc" data-reveal><span class="svc-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></span><h3>אביזרים וחלפים</h3><p>מגוון חלקים ואביזרים במלאי.</p><a class="svc-link" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D">בדיקת זמינות <svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></a></article><article class="svc" data-reveal><span class="svc-ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></span><h3>בדיקה לפני קנייה</h3><p>בדיקה מקצועית לכלי יד שנייה.</p><a class="svc-link" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D">בדיקת זמינות <svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></a></article></div>
+</div></section>
+
+<section class="sec alt" id="about"><div class="wrap split">
+ <div></div>
+ <div class="body">
+  <div class="eyebrow">אודות</div>
+  <h2>מעבדת אופניים</h2>
+  <p>מעבדת אופניים פועל באזור ומעניק שירות אישי, מקצועי ויסודי. אנחנו זמינים לשאלות, לתיאום פגישה ולהצעת מחיר ללא התחייבות.</p>
+  <ul class="checks"><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>אבחון כן ומדויק</span></li><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>חלפים איכותיים</span></li><li><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>עבודה בזמן</span></li></ul>
+ </div>
+</div></section>
+
+<section class="sec" id="gallery"><div class="wrap">
+ <div class="head"><div class="eyebrow">גלריה</div>
+  <h2>הצצה למה שאנחנו עושים</h2>
+  <p>גלריית עבודות תתווסף בהמשך.</p></div>
+ <div class="gal"></div>
+</div></section>
+
+<section class="sec alt" id="process"><div class="wrap">
+ <div class="head"><div class="eyebrow">איך זה עובד</div>
+  <h2>ארבעה צעדים עד שזה קורה</h2></div>
+ <ol class="steps"><li data-reveal><span class="num">1</span><h3>פנייה</h3><p>מתקשרים, שולחים וואטסאפ או משאירים פרטים באתר.</p></li><li data-reveal><span class="num">2</span><h3>תיאום</h3><p>נדבר על מה שצריך, נתאם מועד ונסביר מה הצעד הבא.</p></li><li data-reveal><span class="num">3</span><h3>ביצוע</h3><p>עובדים לפי מה שסיכמנו, עם עדכון לאורך הדרך.</p></li><li data-reveal><span class="num">4</span><h3>המשך</h3><p>נשארים זמינים גם אחרי שסיימנו.</p></li></ol>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap">
+ <div class="head"><div class="eyebrow">שאלות נפוצות</div>
+  <h2>מה שכולם שואלים</h2></div>
+ <div class="faq"><details class="faq-i" data-reveal><summary>איך נוח ליצור קשר?<svg class="i chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>אפשר להתקשר, לשלוח וואטסאפ או להשאיר פרטים בטופס. אנחנו חוזרים בהקדם בשעות הפעילות.</p></details><details class="faq-i" data-reveal><summary>אפשר לקבל הצעת מחיר מראש?<svg class="i chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>כן. אחרי שיחה קצרה נבין מה נדרש ונעביר הצעה מסודרת בכתב, בלי התחייבות.</p></details><details class="faq-i" data-reveal><summary>איפה אתם עובדים?<svg class="i chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>אנחנו נותנים שירות באזור רמת גן. אפשר לתאם מראש מועד נוח.</p></details><details class="faq-i" data-reveal><summary>כמה זמן לוקח?<svg class="i chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>לוח הזמנים נקבע מראש לפי היקף העבודה, ומעודכן לאורך הדרך.</p></details></div>
+</div></section>
+
+<section class="sec alt" id="contact"><div class="wrap contact">
+ <div>
+  <div class="eyebrow">יצירת קשר</div>
+  <h2>נשמח לשמוע מכם</h2>
+  <p class="lead" style="margin-bottom:24px">הכי מהר זה וואטסאפ או טלפון. אפשר גם להשאיר פרטים ונחזור אליכם.</p>
+  <ul class="c-info"><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><div><strong>טלפון</strong><a href="tel:0500000000" dir="ltr">050-0000000</a></div></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.9 9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.03.24-2.93-.6-2.29-1.02-3.75-3.4-3.86-3.56-.11-.16-.92-1.28-.92-2.44 0-1.16.6-1.73.82-1.97.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.42.19.48.66 1.66.72 1.78.06.12.1.26.02.42-.08.16-.15.26-.3.42-.15.16-.31.36-.44.48-.15.14-.3.3-.13.58.17.28.76 1.24 1.62 2.01 1.11.98 2.04 1.29 2.32 1.43.28.14.45.12.62-.07.17-.19.7-.82.89-1.1.19-.28.38-.23.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg><div><strong>וואטסאפ</strong><a href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener">שליחת הודעה</a></div></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><div><strong>דוא״ל</strong><a href="mailto:demo@example.co.il" dir="ltr">demo@example.co.il</a></div></li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>זמינות</strong>מענה בשעות הפעילות, חזרה בהקדם לשאר הפניות</div></li></ul>
+ </div>
+ <form id="leadform" novalidate>
+  <div class="field"><label for="f-name">שם</label>
+   <input id="f-name" name="name" required autocomplete="name" placeholder="איך לפנות אליך?"></div>
+  <div class="field"><label for="f-phone">טלפון</label>
+   <input id="f-phone" name="phone" type="tel" required autocomplete="tel"
+    placeholder="050-0000000" dir="ltr"></div>
+  <div class="field"><label for="f-msg">מה נדרש?</label>
+   <textarea id="f-msg" name="message" rows="4"
+    placeholder="כמה מילים על מה שאתם צריכים"></textarea></div>
+  <button class="btn lg" type="submit" style="width:100%;justify-content:center">לשיחת ייעוץ</button>
+  <p class="form-note">הפנייה נשלחת ישירות בוואטסאפ — בלי טפסים מיותרים ובלי רישום.</p>
+ </form>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="band">
+  <div><h2>מוכנים להתחיל?</h2><p>שיחה קצרה, בלי התחייבות, ונבין יחד מה מתאים לכם.</p></div>
+  <a class="btn lg" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener"><svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.9 9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.03.24-2.93-.6-2.29-1.02-3.75-3.4-3.86-3.56-.11-.16-.92-1.28-.92-2.44 0-1.16.6-1.73.82-1.97.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.42.19.48.66 1.66.72 1.78.06.12.1.26.02.42-.08.16-.15.26-.3.42-.15.16-.31.36-.44.48-.15.14-.3.3-.13.58.17.28.76 1.24 1.62 2.01 1.11.98 2.04 1.29 2.32 1.43.28.14.45.12.62-.07.17-.19.7-.82.89-1.1.19-.28.38-.23.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg>לשיחת ייעוץ</a>
+ </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+ <div class="f-grid">
+  <div>
+   <a class="brand" href="#top"><svg viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="מעבדת אופניים"><rect width="44" height="44" rx="13" fill="#3ea6d8"/><text x="22" y="30" text-anchor="middle" font-family="Heebo,Arial" font-size="22" font-weight="700" fill="#fff">מ</text></svg><span><b>מעבדת אופניים</b>
+    <span>רכב, אופניים ומוסך</span></span></a>
+   <p class="f-about">מעבדת אופניים — רכב, אופניים ומוסך. שירות מקומי, יחס אישי ומענה מהיר. נשמח לעמוד לרשותכם.</p>
+  </div>
+  <div><h4>ניווט</h4><ul class="f-links"><li><a href="#services">שירותים</a></li><li><a href="#about">אודות</a></li><li><a href="#gallery">גלריה</a></li><li><a href="#faq">שאלות נפוצות</a></li><li><a href="#contact">יצירת קשר</a></li></ul></div>
+  <div><h4>שירותים</h4><ul class="f-links"><li><a href="#services">טיפולים ותיקונים</a></li><li><a href="#services">אביזרים וחלפים</a></li><li><a href="#services">בדיקה לפני קנייה</a></li></ul></div>
+  <div><h4>יצירת קשר</h4><ul class="f-links"><li><a href="tel:0500000000" dir="ltr">050-0000000</a></li><li><a href="mailto:demo@example.co.il">demo@example.co.il</a></li><li><a href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener">וואטסאפ</a></li></ul></div>
+ </div>
+ <div class="f-bottom">
+  <span>© <span id="yr">2026</span> מעבדת אופניים · כל הזכויות שמורות</span>
+  <span>האתר נבנה על ידי סטודיו קוד</span>
+ </div>
+</div></footer>
+
+<a class="wa-float" href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D" target="_blank" rel="noopener" aria-label="וואטסאפ"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.9 9.9 9.9 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.03.24-2.93-.6-2.29-1.02-3.75-3.4-3.86-3.56-.11-.16-.92-1.28-.92-2.44 0-1.16.6-1.73.82-1.97.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.42.19.48.66 1.66.72 1.78.06.12.1.26.02.42-.08.16-.15.26-.3.42-.15.16-.31.36-.44.48-.15.14-.3.3-.13.58.17.28.76 1.24 1.62 2.01 1.11.98 2.04 1.29 2.32 1.43.28.14.45.12.62-.07.17-.19.7-.82.89-1.1.19-.28.38-.23.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg></a>
+
+<script>
+(function(){
+ document.documentElement.classList.add('js');
+ var nav=document.getElementById('nav'),b=document.getElementById('burger');
+ b.addEventListener('click',function(){
+  var open=nav.classList.toggle('open');
+  b.setAttribute('aria-expanded',open?'true':'false');});
+ nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open')});
+ document.getElementById('yr').textContent=new Date().getFullYear();
+ var io=new IntersectionObserver(function(es){es.forEach(function(en){
+  if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},
+  {threshold:.12});
+ document.querySelectorAll('[data-reveal]').forEach(function(el,i){
+  el.style.transitionDelay=Math.min(i%6*60,300)+'ms';io.observe(el)});
+ var f=document.getElementById('leadform');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=f.name.value.trim(),p=f.phone.value.trim(),m=f.message.value.trim();
+  if(!n||!p){(!n?f.name:f.phone).focus();return}
+  var t='שלום, שמי '+n+' (טלפון: '+p+').'+(m?' '+m:' הגעתי מהאתר ואשמח לפרטים.');
+  window.open('https://wa.me/972500000000?text='+encodeURIComponent(t),'_blank');});
+})();
+</script>
+</body>
+</html>
