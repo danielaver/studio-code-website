@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הצהרת נגישות · סטודיו קוד</title>
+<meta name="description" content="הצהרת הנגישות של אתר סטודיו קוד — רמת הנגישות, התאמות שבוצעו, דרכי יצירת קשר בנושא נגישות.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236d5efc'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#08090a; --bg-2:#0e1013; --panel:rgba(255,255,255,.04);
+    --border:rgba(255,255,255,.10); --text:#eef0f4; --text-2:#c3c8d2;
+    --muted:#9aa1ad; --accent:#8b7dff; --maxw:820px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#ffffff; --bg-2:#f5f6f8; --panel:rgba(15,17,22,.03);
+           --border:rgba(15,17,22,.12); --text:#12141a; --text-2:#3d434d;
+           --muted:#5a6170; --accent:#5b4bf5; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+       font:16px/1.75 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+  a{color:var(--accent)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;inset-inline-start:-9999px;top:0;background:var(--accent);color:#fff;
+        padding:10px 16px;z-index:100;border-radius:0 0 8px 0}
+  .skip:focus{inset-inline-start:0}
+  header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);
+         backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:20}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding:0 22px}
+  .head-in{display:flex;align-items:center;gap:14px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}
+  .brand svg{display:block;flex:none}
+  .back{margin-inline-start:auto;font-size:14.5px;text-decoration:none;color:var(--text-2);
+        border:1px solid var(--border);padding:7px 14px;border-radius:9px}
+  .back:hover{color:var(--text);border-color:var(--accent)}
+  main{padding:38px 0 70px}
+  h1{font-size:clamp(26px,4.6vw,36px);line-height:1.25;margin:0 0 6px}
+  h2{font-size:20px;margin:34px 0 10px;padding-top:16px;border-top:1px solid var(--border)}
+  h2:first-of-type{border-top:0;padding-top:0}
+  p,li{color:var(--text-2)}
+  ul{padding-inline-start:22px}
+  li{margin:6px 0}
+  .updated{color:var(--muted);font-size:14.5px;margin:0 0 26px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin:18px 0}
+  .card p:last-child{margin-bottom:0}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{text-align:start;padding:9px 12px;border-bottom:1px solid var(--border)}
+  th{color:var(--text);font-weight:600}
+  td{color:var(--text-2)}
+  footer{border-top:1px solid var(--border);padding:22px 0;color:var(--muted);font-size:14.5px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">דלג לתוכן הראשי</a>
+
+<header>
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true" focusable="false">
+        <rect width="32" height="32" rx="8" fill="#6d5efc"/>
+        <path d="M11 21l5-10 5 10M13 17h6" stroke="#fff" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>סטודיו קוד</span>
+    </a>
+    <a class="back" href="index.html">חזרה לאתר</a>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h1>הצהרת נגישות</h1>
+  <p class="updated">עודכן לאחרונה: 18 בספטמבר 2026</p>
+
+  <p>
+    אתר זה מופעל על ידי <strong>סטודיו קוד</strong>. אנו רואים בנגישות האתר ערך חשוב
+    ופועלים להנגיש אותו לכלל המשתמשים, לרבות אנשים עם מוגבלות, בהתאם
+    לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ״ח–1998 ולתקנות שוויון זכויות לאנשים
+    עם מוגבלות (התאמות נגישות לשירות), התשע״ג–2013.
+  </p>
+
+  <h2>רמת הנגישות באתר</h2>
+  <p>
+    האתר הונגש בהתאם להנחיות <strong>WCAG 2.1 ברמה AA</strong>, כפי שאומצו בתקן
+    הישראלי ת״י 5568. ההנגשה בוצעה באופן עצמאי על ידי מפעיל האתר.
+  </p>
+
+  <h2>ההתאמות שבוצעו באתר</h2>
+  <ul>
+    <li>מבנה סמנטי תקין: כותרות מדורגות, אזורי landmark (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>).</li>
+    <li>קישור "דלג לתוכן הראשי" בראש כל עמוד.</li>
+    <li>ניגודיות צבעים של טקסט ורקע בהתאם לדרישת WCAG AA (יחס 4.5:1 לפחות).</li>
+    <li>ניווט מלא במקלדת, כולל סימון מוקד (focus) ברור בכל רכיב אינטראקטיבי.</li>
+    <li>תמיכה ב-<code>prefers-reduced-motion</code> — ביטול אנימציות למי שהגדיר זאת במערכת ההפעלה.</li>
+    <li>טקסט חלופי לכל התמונות; אלמנטים דקורטיביים מסומנים <code>aria-hidden</code>.</li>
+    <li>תמיכה מלאה בכיווניות מימין לשמאל (RTL) ובעברית.</li>
+    <li>האתר מותאם לרזולוציות שונות ולשימוש בטלפון נייד.</li>
+    <li>טפסים עם תוויות (labels) מקושרות והודעות שגיאה מילוליות.</li>
+  </ul>
+
+  <h2>רכיבי נגישות באתר</h2>
+  <p>
+    בכל עמוד באתר מופיע כפתור "נגישות" המאפשר התאמה אישית:
+    הגדלת טקסט, ניגודיות גבוהה, גווני אפור, הדגשת קישורים, עצירת אנימציות
+    ואיפוס ההגדרות. ההגדרות נשמרות בדפדפן שלך בלבד ואינן נשלחות לשרת.
+  </p>
+
+  <h2>חריגים והסתייגויות</h2>
+  <ul>
+    <li>ייתכן ותיתקל ברכיבים שטרם הונגשו במלואם. אנו ממשיכים לשפר את הנגישות באופן שוטף.</li>
+    <li>תוכן המוצג מדפים חיצוניים או מוטמע מצד שלישי (למשל סרטונים) עשוי שלא להיות נגיש במלואו.</li>
+    <li>דפי הדגמה של לקוחות (תיקיית <code>demos/</code>) הם דוגמאות להמחשה בלבד.</li>
+  </ul>
+
+  <h2>דרכי פנייה בנושא נגישות</h2>
+  <div class="card">
+    <p>
+      נתקלת בבעיית נגישות? נשמח לדעת ונטפל בכך בהקדם.
+      <strong>רכז הנגישות:</strong> מפעיל האתר — סטודיו קוד.<br>
+      <strong>דואר אלקטרוני:</strong> <a href="mailto:hello@example.co.il" dir="ltr">hello@example.co.il</a><br>
+      <strong>טלפון:</strong> <a href="tel:+972****0000" dir="ltr">+972 50-000-0000</a>
+    </p>
+    <p>
+      בפנייה נבקש שתפרט/י: מהי הבעיה, באיזה עמוד נתקלת בה, סוג המכשיר והדפדפן,
+      ופרטי קשר לחזרה. אנו מתחייבים להשיב לפניות נגישות בהקדם האפשרי.
+    </p>
+  </div>
+
+  <h2>מידע נגיש בדרכים חלופיות</h2>
+  <p>
+    אם אינך מצליח/ה להשתמש באתר עקב בעיית נגישות, ניתן לקבל את המידע או את השירות
+    בדרכים חלופיות — בטלפון או בדואר האלקטרוני שלעיל. נשמח להעביר כל מידע או שירות
+    בדרך חלופית ונגישה.
+  </p>
+
+  <h2>הערה משפטית</h2>
+  <p>
+    הצהרת נגישות זו מפורסמת בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות
+    (התאמות נגישות לשירות), התשע״ג–2013. אי-נגישות של אתר עלולה לחשוף את מפעילו
+    לקנס מינהלי ולחבות בפיצוי ללא הוכחת נזק. אנו עושים מאמץ מתמשך לעמוד בדרישות החוק.
+  </p>
+  <p><a href="index.html">← חזרה לעמוד הבית</a></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year">2026</span> סטודיו קוד · <a href="terms.html">תנאי שימוש</a> · <a href="privacy.html">מדיניות פרטיות</a></p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

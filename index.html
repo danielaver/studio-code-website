@@ -649,11 +649,43 @@ site.<span class="c-fn">deploy</span>();</code></pre>
     </div>
     <div class="wrap footer-bottom">
       <span>© <span id="year"></span> סטודיו קוד · אתר הדגמה</span>
+      <nav class="footer-legal" aria-label="מידע משפטי">
+        <a href="accessibility.html">הצהרת נגישות</a>
+        <a href="privacy.html">מדיניות פרטיות</a>
+        <a href="terms.html">תנאי שימוש</a>
+      </nav>
       <span class="muted">נבנה עם HTML, CSS ו-JavaScript בלבד</span>
     </div>
   </footer>
 
   <button class="to-top" id="toTop" aria-label="חזרה למעלה" hidden>↑</button>
+
+  <!-- ===== Accessibility widget ===== -->
+  <button class="a11y-btn" id="a11yBtn" type="button"
+          aria-expanded="false" aria-controls="a11yPanel"
+          aria-label="פתיחת תפריט נגישות">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="4.5" r="2"/>
+      <path d="M4 8h16M12 8v6M12 14l-3 6M12 14l3 6"/>
+    </svg>
+    <span>נגישות</span>
+  </button>
+
+  <div class="a11y-panel" id="a11yPanel" hidden role="dialog"
+       aria-label="התאמות נגישות" aria-modal="false">
+    <button class="a11y-close" id="a11yClose" type="button" aria-label="סגירת תפריט נגישות">×</button>
+    <h2>התאמות נגישות</h2>
+    <p>ההגדרות נשמרות בדפדפן שלך בלבד.</p>
+    <div class="a11y-row">
+      <button class="a11y-opt" type="button" data-a11y="big-text" aria-pressed="false">הגדלת טקסט</button>
+      <button class="a11y-opt" type="button" data-a11y="contrast" aria-pressed="false">ניגודיות גבוהה</button>
+      <button class="a11y-opt" type="button" data-a11y="grayscale" aria-pressed="false">גווני אפור</button>
+      <button class="a11y-opt" type="button" data-a11y="links" aria-pressed="false">הדגשת קישורים</button>
+      <button class="a11y-opt" type="button" data-a11y="no-motion" aria-pressed="false">עצירת אנימציות</button>
+      <button class="a11y-opt a11y-reset" type="button" id="a11yReset">איפוס הגדרות</button>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
   <script src="assets/vendor/hero-3d.min.js" defer></script>

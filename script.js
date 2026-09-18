@@ -79,6 +79,21 @@
     });
   }
 
+  /* ---- Logo / brand: always return to the very top ----
+     The #top anchor sits on the sticky header, which is pinned at top:0, so the
+     browser treats it as "already here" and never scrolls. Handle it in JS. */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function goTop(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    closeNav();
+    var brand = document.querySelector('.brand');
+    if (brand && brand.focus) brand.focus({ preventScroll: true });
+  }
+  var brandLinks = document.querySelectorAll('a.brand[href="#top"]');
+  brandLinks.forEach(function (b) { b.addEventListener('click', goTop); });
+
   /* ---- Scroll reveal ---- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -177,13 +192,23 @@
 
       function done() { if (btn) { btn.disabled = false; btn.textContent = label; } }
 
+      /* מקור-הפנייה: מאפשר לדעת איזו רשת הביאה את הלקוח (utm_source / src / ref)
+         — כך פרסום ברשתות הופך מדיד בלוח. ניקוי מלא לפני שליחה. */
+      function campaignSource() {
+        var q = null;
+        try { q = new URLSearchParams(location.search); } catch (err) { return 'site-form'; }
+        var raw = q.get('utm_source') || q.get('src') || q.get('ref') || '';
+        raw = String(raw).toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 32);
+        return raw || 'site-form';
+      }
+
       var payload = {
         name: (document.getElementById('name') || {}).value || '',
         email: (document.getElementById('email') || {}).value || '',
         phone: (document.getElementById('phone') || {}).value || '',
         budget: (document.getElementById('budget') || {}).value || '',
         message: (document.getElementById('message') || {}).value || '',
-        source: 'site-form',
+        source: campaignSource(),
         page: location.pathname
       };
 
@@ -495,4 +520,67 @@
       });
     });
   }
+})();
+/* ---------- Accessibility widget ---------- */
+(function () {
+  var btn = document.getElementById('a11yBtn');
+  var panel = document.getElementById('a11yPanel');
+  if (!btn || !panel) return;
+
+  var closeBtn = document.getElementById('a11yClose');
+  var resetBtn = document.getElementById('a11yReset');
+  var opts = panel.querySelectorAll('[data-a11y]');
+  var KEY = 'studio-a11y';
+  var root = document.documentElement;
+
+  function read() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function write(s) {
+    try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {}
+  }
+  function apply(cls, on) { root.classList.toggle('a11y-' + cls, !!on); }
+
+  var state = read();
+  Object.keys(state).forEach(function (k) { apply(k, state[k]); });
+  Array.prototype.forEach.call(opts, function (o) {
+    o.setAttribute('aria-pressed', state[o.getAttribute('data-a11y')] ? 'true' : 'false');
+  });
+
+  function open()  { panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
+  function close() { panel.hidden = true;  btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    panel.hidden ? open() : close();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', close);
+
+  Array.prototype.forEach.call(opts, function (o) {
+    o.addEventListener('click', function () {
+      var k = o.getAttribute('data-a11y');
+      state[k] = !state[k];
+      apply(k, state[k]);
+      o.setAttribute('aria-pressed', state[k] ? 'true' : 'false');
+      write(state);
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      state = {};
+      Object.keys(read()).forEach(function (k) { apply(k, false); });
+      Array.prototype.forEach.call(opts, function (o) {
+        o.setAttribute('aria-pressed', 'false');
+      });
+      try { localStorage.removeItem(KEY); } catch (e) {}
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    if (!panel.hidden && !panel.contains(e.target) && e.target !== btn) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) close();
+  });
 })();
