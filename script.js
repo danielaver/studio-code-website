@@ -7,12 +7,13 @@
   'use strict';
 
   /* ===== פרטי הסטודיו — נוצרו ע"י tools/build-deploy-kit.py =============
-     email: דוא"ל הפניות שמוצג באתר ובטופס. formsApi: שירות טפסים חינמי
-     (FormSubmit) שמעביר כל פנייה למייל הזה. אין צורך בשרת.               */
+     email: דוא"ל הפניות שמוצג באתר ובטופס. ntfy: ערוץ הפניות הקבוע —
+     זמין תמיד גם כשהמחשב כבוי; הלוח המקומי מושך ממנו כשעולה.              */
   var STUDIO = {
     whatsapp: '',
     email: '',
     formsApi: 'https://crafts-preparing-hardwood-choir.trycloudflare.com/api/leads',
+    ntfy: 'https://ntfy.sh/studio-code-leads-7454428a208fb75a9751b82d',
     leadsApi: (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
       ? 'http://127.0.0.1:8134/api/leads'
       : 'https://crafts-preparing-hardwood-choir.trycloudflare.com/api/leads'
@@ -186,19 +187,62 @@
         page: location.pathname
       };
 
-      fetch(LEADS_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(function (res) {
-        return res.json().then(function (d) { return { ok: res.ok, d: d }; });
-      }).then(function (r) {
-        if (!r.ok || !r.d.ok) throw new Error((r.d && r.d.error) || 'השליחה נכשלה');
+      /* שני ערוצים במקביל:
+         1) ntfy — ערוץ קבוע שזמין תמיד, גם כשהמחשב של הסטודיו כבוי. הפנייה
+            נשמרת שם ונדחפת כהתראה; הלוח המקומי מושך אותה כשהוא חוזר לאוויר.
+         2) הלוח המקומי (או המנהרה) — עיבוד מיידי: ליד + הצעה אוטומטית.
+         די שאחד מהם יצליח כדי שהפנייה לא תאבד. */
+      var tries = [];
+      if (STUDIO.ntfy) {
+        tries.push(fetch(STUDIO.ntfy, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain; charset=utf-8',
+            'Title': '=?UTF-8?B?16TXoNeZ15nXlCDXl9eT16nXlCDXnteU15DXqteo?=',
+            'Tags': 'incoming_envelope'
+          },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (!res.ok) throw new Error('ntfy ' + res.status);
+          return { via: 'ntfy' };
+        }));
+      }
+      if (LEADS_API) {
+        tries.push(fetch(LEADS_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          return res.json().then(function (d) {
+            if (!res.ok || !d.ok) throw new Error((d && d.error) || 'השליחה נכשלה');
+            return { via: 'board', duplicate: !!d.duplicate };
+          });
+        }));
+      }
+      if (!tries.length) {
+        if (status) {
+          status.className = 'form-status bad';
+          status.textContent = 'הטופס אינו מחובר כרגע. אפשר לכתוב ל-' + (STUDIO.email || 'הסטודיו') + '.';
+        }
+        done();
+        return;
+      }
+      Promise.all(tries.map(function (p) {
+        return p.then(function (v) { return v; }, function (e) { return { err: e }; });
+      })).then(function (rs) {
+        var good = rs.filter(function (r) { return !r.err; });
+        if (!good.length) throw new Error((rs[0].err && rs[0].err.message) || 'השליחה נכשלה');
+        var board = null;
+        good.forEach(function (r) { if (r.via === 'board') board = r; });
         if (status) {
           status.className = 'form-status ok';
-          status.textContent = r.d.duplicate
-            ? 'תודה! זיהינו פנייה חוזרת — עדכנו את הליד הקיים בלוח.'
-            : 'תודה! הפנייה נקלטה ונפתחה כ"ליד" בלוח הניהול. נחזור אליך בקרוב.';
+          if (board) {
+            status.textContent = board.duplicate
+              ? 'תודה! זיהינו פנייה חוזרת — עדכנו את הליד הקיים בלוח.'
+              : 'תודה! הפנייה נקלטה ונפתחה כ"ליד" בלוח הניהול. נחזור אליך בקרוב.';
+          } else {
+            status.textContent = 'תודה! הפנייה נשלחה לסטודיו. נחזור אליך בקרוב.';
+          }
         }
         form.reset();
       }).catch(function (err) {
