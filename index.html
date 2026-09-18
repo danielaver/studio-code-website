@@ -11,22 +11,23 @@
   <title>סטודיו קוד — בונים אתרים שעובדים</title>
 
   <!-- ===== SEO: קנוני, סריקה ושיתוף =====
-       __SITE_URL__ / __SITE_IMAGE__ מוחלפים בכתובת האמיתית בזמן ההגשה
-       (tools/dashboard-server.py · _inject_seo). להגדרת דומיין: MARKETING_SITE_URL -->
-  <link rel="canonical" href="__SITE_URL__">
+       טוקני ה-SEO (כתובת האתר ותמונת השיתוף) מוחלפים בכתובת האמיתית בהגשה
+       המקומית (tools/dashboard-server.py · _inject_seo) ובזמן הדחיפה
+       (tools/publish-site.py · fill_placeholders). להגדרת דומיין: MARKETING_SITE_URL -->
+  <link rel="canonical" href="https://danielaver.github.io/studio-code-website/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="סטודיו קוד">
   <meta name="theme-color" content="#6d5efc" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
-  <link rel="alternate" hreflang="he-IL" href="__SITE_URL__">
+  <link rel="alternate" hreflang="he-IL" href="https://danielaver.github.io/studio-code-website/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="סטודיו קוד">
   <meta property="og:locale" content="he_IL">
-  <meta property="og:url" content="__SITE_URL__">
+  <meta property="og:url" content="https://danielaver.github.io/studio-code-website/">
   <meta property="og:title" content="סטודיו קוד — בונים אתרים שעובדים">
   <meta property="og:description" content="עיצוב, קוד, ביצועים, נגישות ותחזוקה במקום אחד — אתרים וחנויות ואפליקציות ווב בעברית RTL, מהרעיון ועד ההשקה.">
-  <meta property="og:image" content="__SITE_IMAGE__">
+  <meta property="og:image" content="https://danielaver.github.io/studio-code-website/og-image.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -35,7 +36,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="סטודיו קוד — בונים אתרים שעובדים">
   <meta name="twitter:description" content="אתרים, חנויות ואפליקציות ווב בעברית RTL: עיצוב, קוד, ביצועים ונגישות — מהרעיון ועד ההשקה.">
-  <meta name="twitter:image" content="__SITE_IMAGE__">
+  <meta name="twitter:image" content="https://danielaver.github.io/studio-code-website/og-image.png">
   <meta name="twitter:image:alt" content="סטודיו קוד — בניית אתרים ואפליקציות ווב בעברית">
 
   <script type="application/ld+json">
@@ -44,12 +45,12 @@
     "@graph": [
       {
         "@type": ["ProfessionalService", "LocalBusiness"],
-        "@id": "__SITE_URL__#studio",
+        "@id": "https://danielaver.github.io/studio-code-website/#studio",
         "name": "סטודיו קוד",
         "alternateName": "Studio Code",
         "description": "סטודיו לבניית אתרים ואפליקציות ווב בעברית: עיצוב, פיתוח, ביצועים, נגישות WCAG, קידום אורגני ותחזוקה — במקום אחד.",
-        "url": "__SITE_URL__",
-        "image": "__SITE_IMAGE__",
+        "url": "https://danielaver.github.io/studio-code-website/",
+        "image": "https://danielaver.github.io/studio-code-website/og-image.png",
         "telephone": "+972-50-000-0000",
         "priceRange": "₪1,450–₪15,000",
         "currenciesAccepted": "ILS",
@@ -66,7 +67,7 @@
             "name": "מסלול נוכחות — דף נחיתה או אתר תדמית קטן",
             "price": "2900",
             "priceCurrency": "ILS",
-            "url": "__SITE_URL__#pricing",
+            "url": "https://danielaver.github.io/studio-code-website/#pricing",
             "itemOffered": {"@type": "Service", "name": "בניית אתר תדמית בעברית RTL"}
           },
           {
@@ -74,7 +75,7 @@
             "name": "מסלול עסקי — אתר עסקי מלא או חנות אונליין",
             "price": "7900",
             "priceCurrency": "ILS",
-            "url": "__SITE_URL__#pricing",
+            "url": "https://danielaver.github.io/studio-code-website/#pricing",
             "itemOffered": {"@type": "Service", "name": "בניית אתר עסקי וחנות אונליין"}
           },
           {
@@ -82,7 +83,7 @@
             "name": "מסלול אפליקציה — ווב אפ ואינטגרציות",
             "price": "15000",
             "priceCurrency": "ILS",
-            "url": "__SITE_URL__#pricing",
+            "url": "https://danielaver.github.io/studio-code-website/#pricing",
             "itemOffered": {"@type": "Service", "name": "פיתוח אפליקציית ווב ואינטגרציות API"}
           },
           {
@@ -91,7 +92,7 @@
             "price": "1450",
             "priceCurrency": "ILS",
             "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
-            "url": "__SITE_URL__#marketing",
+            "url": "https://danielaver.github.io/studio-code-website/#marketing",
             "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1450", "priceCurrency": "ILS", "unitCode": "MON"}
           },
           {
@@ -100,7 +101,7 @@
             "price": "2900",
             "priceCurrency": "ILS",
             "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
-            "url": "__SITE_URL__#marketing",
+            "url": "https://danielaver.github.io/studio-code-website/#marketing",
             "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2900", "priceCurrency": "ILS", "unitCode": "MON"}
           },
           {
@@ -109,22 +110,22 @@
             "price": "5400",
             "priceCurrency": "ILS",
             "description": "מחיר חודשי; המחירים באתר להדגמה בלבד ואינם הצעת מחיר.",
-            "url": "__SITE_URL__#marketing",
+            "url": "https://danielaver.github.io/studio-code-website/#marketing",
             "priceSpecification": {"@type": "UnitPriceSpecification", "price": "5400", "priceCurrency": "ILS", "unitCode": "MON"}
           }
         ]
       },
       {
         "@type": "WebSite",
-        "@id": "__SITE_URL__#website",
-        "url": "__SITE_URL__",
+        "@id": "https://danielaver.github.io/studio-code-website/#website",
+        "url": "https://danielaver.github.io/studio-code-website/",
         "name": "סטודיו קוד",
         "inLanguage": "he-IL",
-        "publisher": {"@id": "__SITE_URL__#studio"}
+        "publisher": {"@id": "https://danielaver.github.io/studio-code-website/#studio"}
       },
       {
         "@type": "FAQPage",
-        "@id": "__SITE_URL__#faq",
+        "@id": "https://danielaver.github.io/studio-code-website/#faq",
         "inLanguage": "he-IL",
         "mainEntity": [
           {

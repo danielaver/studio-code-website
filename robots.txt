@@ -1,4 +1,4 @@
-# סטודיו קוד — robots.txt (נוצר ע"י tools/seo.py; האתר השיווקי: __SITE_URL__)
+# סטודיו קוד — robots.txt (נוצר ע"י tools/seo.py; האתר השיווקי: https://danielaver.github.io/studio-code-website/)
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -7,4 +7,4 @@ Disallow: /clients/
 Disallow: /marketing/shots/
 Disallow: /marketing/tools/
 
-Sitemap: __SITE_URL__sitemap.xml
+Sitemap: https://danielaver.github.io/studio-code-website/sitemap.xml
