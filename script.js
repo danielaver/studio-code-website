@@ -12,10 +12,10 @@
   var STUDIO = {
     whatsapp: '',
     email: '',
-    formsApi: 'https://thrown-auction-limitations-hurricane.trycloudflare.com/api/leads',
+    formsApi: 'https://crafts-preparing-hardwood-choir.trycloudflare.com/api/leads',
     leadsApi: (location.hostname === '127.0.0.1' || location.hostname === 'localhost')
       ? 'http://127.0.0.1:8134/api/leads'
-      : 'https://thrown-auction-limitations-hurricane.trycloudflare.com/api/leads'
+      : 'https://crafts-preparing-hardwood-choir.trycloudflare.com/api/leads'
   };
   var LEADS_API = STUDIO.leadsApi;
 
